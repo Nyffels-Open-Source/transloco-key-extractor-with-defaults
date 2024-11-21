@@ -1,7 +1,7 @@
 import {Settings} from "./models/settings";
+import extractKeys from "./logic/extract";
 
 const args = process.argv.slice(2);
-console.log(args);
 
 if (args.find(a => /^extract$/.test(a))) {
   if (args.find(a => a == "--help")) {
@@ -19,7 +19,7 @@ if (args.find(a => /^extract$/.test(a))) {
       ?.replace("--default-language=", "") ?? "";
   }
 
-  console.log(Settings);
+  extractKeys();
 } else {
   if (args.find(a => a == "--help")) {
     // TODO Show all actions with explenation
