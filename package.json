@@ -1,0 +1,36 @@
+{
+  "name": "@nyffels/transloco-keys-extractor-with-defaults",
+  "version": "1.0.0-alpha1",
+  "description": "Extract translatable keys from projects that uses Transloco. Developers can declare default translation values for one language right inside the code.",
+  "type": "module",
+  "bin": {
+    "transloco-keys-extractor-with-defaults": "index.js"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nyffels-Open-Source/transloco-key-extractor-with-defaults.git"
+  },
+  "keywords": [
+    "angular",
+    "i18n",
+    "transloco",
+    "translate",
+    "extract",
+    "keys",
+    "default",
+    "tool",
+    "cli"
+  ],
+  "author": {
+    "url": "https://nyffels.be",
+    "name": "Nyffels BV",
+    "email": "Chesney@nyffels.be"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
