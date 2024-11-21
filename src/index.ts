@@ -9,7 +9,7 @@ if (args.find(a => /^extract$/.test(a))) {
     console.log("Help function isn't yet available");
     process.exit();
   }
-  
+
   if (args.find(a => a == "--removed-unused-keys")) {
     Settings.removeUnusedKeys = true;
   }
@@ -26,6 +26,6 @@ if (args.find(a => /^extract$/.test(a))) {
     console.log("Help function isn't yet available");
     process.exit();
   }
-  
+
   console.error("No action given...");
 }

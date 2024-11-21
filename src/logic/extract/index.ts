@@ -1,4 +1,9 @@
+import ora from 'ora';
+
 export default function extractKeys() {
-  // TODO
+  const spinner = ora("Extracting keys...")
+    .start();
+  spinner.start("Extracting keys...");
+  
   return null;
 }
