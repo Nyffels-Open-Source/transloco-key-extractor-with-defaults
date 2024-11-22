@@ -13,6 +13,6 @@ export class AppComponent {
   constructor(){
     translate("test.0")
     translate(defaultMarker("test.1"));
-    translate(defaultMarker('test.2', 'test'));
+    translate(defaultMarker('test.2', 'This is a test!'));
   }
 }

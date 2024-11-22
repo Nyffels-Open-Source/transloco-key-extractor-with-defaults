@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
+import {App2Component} from "./app2.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    App2Component
   ],
   imports: [
     BrowserModule,
