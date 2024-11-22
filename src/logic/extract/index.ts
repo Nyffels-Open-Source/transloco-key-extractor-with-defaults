@@ -1,9 +1,7 @@
-import ora from 'ora';
+import {waitInformation} from "../shared/cli";
 
-export default function extractKeys() {
-  const spinner = ora("Extracting keys...")
-    .start();
-  spinner.start("Extracting keys...");
+export function extractKeys() {
+  const lineId = waitInformation("extracting keys");
   
-  return null;
+  return;
 }

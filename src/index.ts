@@ -1,7 +1,8 @@
+import {extractKeys} from "./logic/extract";
 import {Settings} from "./models/settings";
-import extractKeys from "./logic/extract";
 
 const args = process.argv.slice(2);
+console.log(args);
 
 if (args.find(a => /^extract$/.test(a))) {
   if (args.find(a => a == "--help")) {
@@ -16,7 +17,7 @@ if (args.find(a => /^extract$/.test(a))) {
 
   if (args.find(a => a.includes("--default-language="))) {
     Settings.defaultLanguage = args.find(a => a.includes("--default-language="))
-      ?.replace("--default-language=", "") ?? "";
+      ?.replace("--default-language=", "") ?? "en";
   }
 
   extractKeys();

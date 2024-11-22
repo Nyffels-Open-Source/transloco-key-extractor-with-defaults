@@ -2,19 +2,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "esModuleInterop": true,
-    "target": "es6",
+    "target": "ES2022",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "./dist",
     "typeRoots": ["node_modules/@types"],
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "declaration": true,
-    "declarationMap": true
+    "experimentalDecorators": true,
+    "resolveJsonModule": true
   },
-  "include": ["src/index.ts", "src/app.ts"],
-  "lib": ["es6"],
+  "lib": ["es2022"]
 }
