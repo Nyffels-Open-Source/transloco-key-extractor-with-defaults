@@ -1,5 +1,5 @@
 import {waitInformation} from "../shared/cli";
-import fs from 'fs';
+// import fs from 'fs';
 import {Config} from "../../models/settings";
 
 export function extractKeys() {
@@ -12,8 +12,8 @@ export function extractKeys() {
 }
 
 function extractKeysFromTypescript() {
-  const files = fs.readFileSync(Config.sourceLocation, {encoding: "utf8"});
-  console.log(files);
+  // const files = fs.readFileSync(Config.sourceLocation, {encoding: "utf8"});
+  // console.log(files);
 }
 
 function extractKeysFromTemplates() {

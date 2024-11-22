@@ -2,3 +2,4 @@
 /dist
 /__test/package-lock.json
 /__test/node_modules
+/__test/.angular
