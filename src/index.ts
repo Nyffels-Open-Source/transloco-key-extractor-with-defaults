@@ -3,7 +3,6 @@ import {Config} from "./models/settings";
 import * as Path from "node:path";
 
 const args = process.argv.slice(2);
-console.log(args);
 
 if (args.find(a => /^extract$/.test(a))) {
   if (args.find(a => a == "--help")) {
@@ -23,11 +22,11 @@ if (args.find(a => /^extract$/.test(a))) {
 
   if (args.find(a => a.includes("--source="))) {
     const tmpSource = args.find(a => a.includes("--source="))
-      ?.replace("--default-language=", "") ?? "./";
+      ?.replace("--source=", "") ?? "./";
     
-    Config.sourceLocation = Path.join(Config.sourceLocation, tmpSource);
+    Config.sourceLocation = Path.join(process.cwd(), tmpSource);
   } else {
-    Config.sourceLocation = Path.join(Config.sourceLocation, "./");
+    Config.sourceLocation = Path.join(process.cwd(), "./");
   }
 
   extractKeys();

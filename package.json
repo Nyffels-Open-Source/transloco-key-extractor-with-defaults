@@ -33,7 +33,7 @@
     "email": "Chesney@nyffels.be"
   },
   "scripts": {
-    "extract": "ts-node-dev ./src/index.ts extract --source=\"./__test/src\"",
+    "extract": "ts-node-dev ./src/index.ts extract --source=\".\\__test\\src\"",
     "build": "tsc --build",
     "prepare-test": "cd ./__test && npm i"
   },
