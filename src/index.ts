@@ -23,7 +23,7 @@ if (args.find(a => /^extract$/.test(a))) {
   if (args.find(a => a.includes("--source="))) {
     const tmpSource = args.find(a => a.includes("--source="))
       ?.replace("--source=", "") ?? "./";
-    
+
     Config.sourceLocation = Path.join(process.cwd(), tmpSource);
   } else {
     Config.sourceLocation = Path.join(process.cwd(), "./");
