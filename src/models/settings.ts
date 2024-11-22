@@ -5,6 +5,7 @@ export class Config {
   public static sourceLocation: string = "";
   
   /** Static **/
-  public static translocoImport = /@(jsverse|ngneat)\/transloco/;
-  public static translocoExtractorImport = /@nyffels\/transloco-keys-extractor-with-defaults/;
+  public static translocoImport = /.*@(jsverse|ngneat)\/transloco.*/;
+  public static translocoExtractorImport = /.*@nyffels\/transloco-extractor-defaults.*/;
+  public static translocoPipeTemplate = /.*\|transloco.*/;
 }

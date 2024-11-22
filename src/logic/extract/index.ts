@@ -13,7 +13,13 @@ export async function extractKeys() {
   cliId = waitInformation("Extracting keys");
   for (let file of files) {
     let content = fs.readFileSync(Path.join(Config.sourceLocation, file), 'utf8');
-    console.log(content);
+    content = content.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, "")
+    if ((Config.translocoImport.test(content) && Config.translocoExtractorImport.test(content)) || Config.translocoPipeTemplate.test(content)) {
+      console.log(file);
+      // console.log("----");
+      // console.log(content);
+      // console.log("----");
+    }
   }
   clearInterval(cliId);
   console.log("Extraction completed");
