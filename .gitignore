@@ -1,2 +1,4 @@
 /node_modules
 /dist
+/__test/package-lock.json
+/__test/node_modules

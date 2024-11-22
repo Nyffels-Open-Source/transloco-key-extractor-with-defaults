@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ES2022",
     "esModuleInterop": true,
     "target": "ES2022",
     "moduleResolution": "node",
@@ -9,7 +9,8 @@
     "typeRoots": ["node_modules/@types"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "declaration": true
   },
   "lib": ["es2022"],
   "exclude": ["__test"]
