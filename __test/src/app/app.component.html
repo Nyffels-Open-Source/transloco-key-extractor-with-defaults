@@ -2,6 +2,7 @@
   <h1>Title</h1>
   <p>{{ 'label.html.test' | transloco: { default: 'This is a test1.' } }}</p>
 
-  <p>{{ 'label.html.test' | transloco: { default: 'This is a test2. ' +
-      'Oooh thats so cool!' } }}</p>
+  <p>{{ 'label.html.test1' | transloco: { default: 'This is a test2. Oooh thats so cool!' } }}</p>
+
+  <p>{{ 'label.no.default' | transloco }}</p>
 </div>

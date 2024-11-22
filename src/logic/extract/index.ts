@@ -27,19 +27,34 @@ export default async function extract() {
 
       for (let match of matches) {
         if (/^("|'|`).*\,.*("|'|`)$/.test(match)) {
-          /** This is a key / defaultValue setup **/
+          /** This is a key with default value **/
           const [key, defaultValue] = {"\"": match.split(/,(?=(?:[^"]*"[^"]*")*$)/g), "'": match.split(/,(?=(?:[^']*'[^']*')*$)/g), "`": match.split(/,(?=(?:[^`]*`[^`]*`)*$)/g)}[match[0]];
           keys.push({key, defaultValue});
         } else if (/^("|'|`).*("|'|`)$/.test(match)) {
-          /** this is a key only setup **/
+          /** this is a key without default value **/
           keys.push({key: match, defaultValue: ""});
         }
       }
     }
-
-    if (Config.translocoPipeTemplate.test(content)) {
-      // TODO Extract using pipe 
+    
+    if (Config.translocoPipeTemplate.test(trimmedContent)) {
       console.log(content);
+      console.log("----");
+      const matches = content.match(/{{.*\|.*transloco.*}}/);
+      
+      for (let match of matches) {
+        console.log(match);
+        
+        if (/transloco.*default/.test(match)) {
+          /** This is a key with default value **/ 
+          const key = match.match(/'(.*?)'.*|,*transloco/).pop();
+          // console.log(key);
+        } else {
+          /** THis is a key without defualt value **/
+          const key = match.match(/'(.*?)'.*|,*transloco/).pop();
+          // console.log(key);
+        }
+      }
     }
   }
   clearInterval(cliId);
