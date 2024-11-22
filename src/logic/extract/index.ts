@@ -14,11 +14,14 @@ export async function extractKeys() {
   for (let file of files) {
     let content = fs.readFileSync(Path.join(Config.sourceLocation, file), 'utf8');
     content = content.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, "")
-    if ((Config.translocoImport.test(content) && Config.translocoExtractorImport.test(content)) || Config.translocoPipeTemplate.test(content)) {
-      console.log(file);
-      // console.log("----");
-      // console.log(content);
-      // console.log("----");
+    if (Config.translocoImport.test(content) && Config.translocoExtractorImport.test(content)) {
+      // TODO Extract using markerDefault and transloco
+      console.log(content);
+    }
+    
+    if (Config.translocoPipeTemplate.test(content)) {
+      // TODO Extract using pipe 
+      console.log(content);
     }
   }
   clearInterval(cliId);
