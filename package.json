@@ -1,5 +1,5 @@
 {
-  "name": "@nyffels/transloco-keys-extractor-with-defaults",
+  "name": "@nyffels/transloco-extractor-defaults",
   "description": "Extract translatable keys from projects that uses Transloco. Developers can declare default translation values for one language right inside the code.",
   "private": false,
   "version": "1.0.0-alpha1",
@@ -34,7 +34,8 @@
   },
   "scripts": {
     "extract": "ts-node-dev ./src/index.ts extract",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "prepare-test": "cd ./__test && npm i"
   },
   "devDependencies": {
     "@types/node": "^22.9.1",
