@@ -4,7 +4,7 @@ import {Config} from "../../models/settings";
 import fs from 'fs';
 import Path from 'path';
 
-export async function extractKeys() {
+export default async function extract() {
   let cliId = waitInformation("Analysing files");
   let files = await readdir(Config.sourceLocation, {recursive: true});
   files = files.filter(f => /.*(\.ts)|(\.html)$/.test(f));
@@ -12,11 +12,11 @@ export async function extractKeys() {
 
   cliId = waitInformation("Extracting keys");
   for (let file of files) {
-    let content = fs.readFileSync(Path.join(Config.sourceLocation, file), 'utf8');
-    content = content.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, "")
-    if (Config.translocoImport.test(content) && Config.translocoExtractorImport.test(content)) {
-      // TODO Extract using markerDefault and transloco
-      console.log(content);
+    const content = fs.readFileSync(Path.join(Config.sourceLocation, file), 'utf8');
+    const trimmedContent = content.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, "")
+    if (Config.translocoImport.test(trimmedContent) && Config.translocoExtractorImport.test(trimmedContent)) {
+      const re = new RegExp(Config.markerAlias + '\\(.*\\)', 'g');
+      const matches = content.match(re);
     }
     
     if (Config.translocoPipeTemplate.test(content)) {

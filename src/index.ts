@@ -1,6 +1,6 @@
-import {extractKeys} from "./logic/extract";
 import {Config} from "./models/settings";
 import * as Path from "node:path";
+import extract from "./logic/extract";
 
 const args = process.argv.slice(2);
 
@@ -20,6 +20,11 @@ if (args.find(a => /^extract$/.test(a))) {
       ?.replace("--default-language=", "") ?? "en";
   }
 
+  if (args.find(a => a.includes("--marker-alias="))) {
+    Config.markerAlias = args.find(a => a.includes("--marker-alias="))
+      ?.replace("--marker-alias=", "") ?? "defaultMarker";
+  }
+
   if (args.find(a => a.includes("--source="))) {
     const tmpSource = args.find(a => a.includes("--source="))
       ?.replace("--source=", "") ?? "./";
@@ -29,7 +34,7 @@ if (args.find(a => /^extract$/.test(a))) {
     Config.sourceLocation = Path.join(process.cwd(), "./");
   }
 
-  extractKeys();
+  extract();
 } else {
   if (args.find(a => a == "--help")) {
     // TODO Show all actions with explenation
