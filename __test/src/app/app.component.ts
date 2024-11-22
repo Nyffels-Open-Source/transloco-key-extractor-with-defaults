@@ -12,10 +12,8 @@ export class AppComponent {
 
   constructor(private translocoService: TranslocoService){
     translate("test.0")
-    translate(["test", "1"]);
     translate(defaultMarker("test.1"));
     translate(defaultMarker('test.2', 'This is a test!'));
-    translate(defaultMarker(["test", "1"], "This is an array test!"));
     this.translocoService.translate(defaultMarker("test.3", "This is an injection test!"));
   }
 }
